@@ -1,16 +1,2 @@
 # Insurance-company
-ods noproctitle;
-ods graphics / imagemap=on;
-
-/* Test for normality */
-proc univariate data=WORK.IMPORT normal mu0=0;
-	ods select TestsForNormality;
-	class Vehicle_Damage;
-	var Annual_Premium;
-run;
-
-/* t test */
-proc ttest data=WORK.IMPORT sides=2 h0=0 plots(showh0);
-	class Vehicle_Damage;
-	var Annual_Premium;
-run;
+This project can help the insurance company to build a guideline to set the annual premium once they know if the vehicle damage will change the annual premium and better answer customer questions in the future.
